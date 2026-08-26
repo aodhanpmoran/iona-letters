@@ -210,13 +210,9 @@
         <label class="sr" for="email">Email</label>
         <input id="email" name="EMAIL" type="email" autocomplete="email" required placeholder="Email" />
       </div>
-      <div class="field">
-        <label class="sr" for="fname">First name (optional)</label>
-        <input id="fname" name="FNAME" type="text" autocomplete="given-name" placeholder="First name (optional)" />
-      </div>
       <button class="cta" type="submit">Send me letter 1</button>
       <p class="free">Free. Five short letters. Then Iona's eLetter if you want the talks. Unsubscribe in one click.</p>
-      <p class="note">Letter 1 opens on the next page so you can read the first morning now.</p>
+      <p class="note">Here, letter 1 opens so you can mark the words. On Iona's site the same button would also keep the address for mornings 2 to 5.</p>
     </form>
 
     <div class="thanks" id="thanks" hidden>
@@ -272,9 +268,7 @@
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         if (!form.reportValidity()) return;
-        form.hidden = true;
-        thanks.hidden = false;
-        thanks.querySelector("a").focus();
+        window.location.href = "letter-1.html";
       });
     })();
   </script>
